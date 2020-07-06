@@ -1,0 +1,52 @@
+<%= form_for(@contact, :url=> api_contacts_path, :html => {class: "contact100-form validate-form"}) do |form| %>
+
+  <% if @contact.errors.any? %>
+    <div class="error_explanation">
+      <h2>
+        <%= pluralize(@contact.errors.count, "error") %> prohibited
+        this from being saved:
+      </h2>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <span class="contact100-form-title">
+   <%= t 'views.contacts.send_us_message' %>
+  </span>
+
+  <label class="label-input100" for="first-name"><%= t 'views.contacts.name_section' %></label>
+  <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+    <%= form.text_field :firstname, id: "first_name", class: "input100", placeholder: "First name", :required => true %>
+    <span class="focus-input100"></span>
+  </div>
+  <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+    <%= form.text_field :lastname, id: "last_name", class: "input100", placeholder: "Last name"%>
+    <span class="focus-input100"></span>
+  </div>
+
+  <label class="label-input100" for="email"><%= t 'views.contacts.email' %></label>
+  <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+    <%= form.email_field :email, id: "email", class: "input100", placeholder: "Eg. example@email.com", :required => true %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <label class="label-input100" for="phone"><%= t 'views.contacts.phone_number' %></label>
+  <div class="wrap-input100">
+    <%= form.number_field :phone_number,  class: "input100", :maxlength => "10", :pattern => "[0-9]{10}" %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <label class="label-input100" for="message"><%= t 'views.contacts.message' %></label>
+  <div class="wrap-input100 validate-input" data-validate = "Message is required">
+     <%= form.text_area :message, id: "message",  autofocus: true, :placeholder => "Write us a message", :required => true, :class => "input100"%>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="container-contact100-form-btn">
+    <%= form.submit (t 'views.contacts.send_button'), :class => "contact100-form-btn" %>
+  </div>
+<% end %>

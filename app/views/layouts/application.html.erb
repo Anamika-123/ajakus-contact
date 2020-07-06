@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AjakusContact</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% asset_path("icons/favicon.ico", async: true) %>
+    <% asset_path("/bootstrap/css/bootstrap.min.css", async: true) %>
+    <% font_path("/font-awesome-4.7.0/css/font-awesome.min.css", async: true) %>
+    <% font_path("/Linearicons-Free-v1.0.0/icon-font.min.css", async: true) %>
+    <% asset_path("/animate/animate.css", async: true) %>
+    <% asset_path("/css-hamburgers/hamburgers.min.css", async: true) %>
+    <% asset_path("/animsition/css/animsition.min.css", async: true) %>
+    <% asset_path("/select2/select2.min.css", async: true) %>
+    <% asset_path("/daterangepicker/daterangepicker.css", async: true) %>
+    <% asset_path("/util.css", async: true) %>
+    <% asset_path("/main.css", async: true) %>
+    <% asset_path("/jquery/jquery-3.2.1.min.js", async: true) %>
+    <% asset_path("/animsition/js/animsition.min.js", async: true) %>
+    <% asset_path("/bootstrap/js/popper.js", async: true) %>
+    <% asset_path("/bootstrap/js/bootstrap.min.js", async: true) %>
+    <% asset_path("/select2/select2.min.js", async: true) %>
+    <% asset_path("/daterangepicker/moment.min.js", async: true) %>
+    <% asset_path("/daterangepicker/daterangepicker.js", async: true) %>
+    <% asset_path("/countdowntime/countdowntime.js", async: true) %>
+    <% asset_path("/main.js", async: true) %> 
+  </head>
+
+  <body>
+    <div class="padding-20"><%= select_tag "language_selector", options_for_select(['hi', 'en']), { include_blank: 'Select an option', class: "border-grey padding-lr padding-tb" } %>
+    </div>
+    <%= yield %>
+  </body>
+</html>
