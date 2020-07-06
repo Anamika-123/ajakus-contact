@@ -1,0 +1,10 @@
+hi:
+  views:
+    contacts:
+      send_us_message: "हमें मेसेज भेजें"
+      name_section: "हमें अपना नाम बताएं"
+      email: "अपना मेल दर्ज करें"
+      phone_number: "अपना नंबर दर्ज करें"
+      message: "मेसेज"
+      send_button: "मेसेज भेजें"
+      
