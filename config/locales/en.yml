@@ -1,0 +1,10 @@
+en:
+  views:
+    contacts:
+      send_us_message: "Send Us A Message"
+      name_section: "Tell US YOUR NAME*"
+      email: "ENTER YOUR MAIL *"
+      phone_number: "ENTER YOUR NUMBER"
+      message: "MESSAGE*"
+      send_button: "SEND MESSAGE"
+      
